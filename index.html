@@ -10,7 +10,7 @@
   <title>Andi Syakirah | Jasa Katalog Digital Premium untuk UMKM Indonesia</title>
   <meta name="title" content="Andi Syakirah | Jasa Katalog Digital Premium untuk UMKM Indonesia" />
   <meta name="description" content="Jasa pembuatan katalog produk digital premium untuk UMKM oleh Andi Syakirah. Desain elegan, interaktif, siap WhatsApp & Instagram. Harga mulai Rp 350rb." />
-  <meta name="keywords" content="jasa katalog digital, katalog produk umkm, flipbook digital, desain katalog online, andi syakirah, katalog whatsapp, katalog instagram, pdf katalog produk, jasa desain umkm, katalog interaktif" />
+  <meta name="keywords" content="jasa katalog digital, katalog produk umkm, flipbook digital, desain katalog online, andi syakirah, katalog whatsapp, katalog instagram, pdf katalog produk, jasa desain umkm, katalog interaktif, visi misi umkm" />
   
   <!-- ========== AUTHOR & COPYRIGHT ========== -->
   <meta name="author" content="Andi Syakirah" />
@@ -39,8 +39,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://andisyakirah.com" />
   <meta property="og:title" content="Andi Syakirah | Jasa Katalog Digital Premium untuk UMKM" />
-  <meta property="og:description" content="Jasa pembuatan katalog produk digital premium untuk UMKM. Desain elegan, interaktif, siap WhatsApp & Instagram. Harga mulai Rp 350rb." />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/0a0a0a/d4af37?text=Andi+Syakirah+Digital+Studio" />
+  <meta property="og:description" content="Visi & Misi: Memberdayakan UMKM Indonesia melalui katalog digital yang elegan dan berdampak bisnis nyata." />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/0a0a0a/d4af37?text=Visi+%26+Misi+Andi+Syakirah" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:type" content="image/png" />
@@ -51,9 +51,9 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@andisyakirah" />
   <meta name="twitter:creator" content="@andisyakirah" />
-  <meta name="twitter:title" content="Andi Syakirah | Jasa Katalog Digital Premium untuk UMKM" />
-  <meta name="twitter:description" content="Jasa pembuatan katalog produk digital premium untuk UMKM. Desain elegan, interaktif, siap WhatsApp & Instagram." />
-  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/0a0a0a/d4af37?text=Andi+Syakirah+Digital+Studio" />
+  <meta name="twitter:title" content="Visi & Misi Andi Syakirah | Digitalisasi UMKM Indonesia" />
+  <meta name="twitter:description" content="Memberdayakan 10.000 UMKM Indonesia melalui katalog digital premium yang elegan dan berdampak bisnis nyata." />
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630/0a0a0a/d4af37?text=Visi+%26+Misi+Andi+Syakirah" />
   
   <!-- ========== PINTEREST ========== -->
   <meta name="pinterest" content="nopin" />
@@ -69,9 +69,6 @@
   <!-- ========== PRECONNECT & DNS PREFETCH ========== -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-  
-  <!-- ========== PRELOAD FONTS ========== -->
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style" />
   
   <!-- ========== STYLES ========== -->
   <style>
@@ -168,7 +165,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 1.8rem;
     }
 
     nav a {
@@ -310,6 +307,98 @@
     .hero-content p {
       font-size: 1.3rem;
       margin-bottom: 2rem;
+    }
+
+    /* ========== VISI MISI SECTION ========== */
+    #visi-misi {
+      background: linear-gradient(135deg, rgba(15, 15, 15, 0.9), rgba(5, 5, 5, 0.95));
+    }
+
+    .vision-mission-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .vision-box, .mission-box {
+      background: rgba(30, 30, 30, 0.7);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      transition: var(--transition);
+    }
+
+    .vision-box:hover, .mission-box:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .vision-box {
+      border-top: 4px solid var(--gold);
+    }
+
+    .mission-box {
+      border-left: 4px solid var(--gold);
+    }
+
+    .vision-box h3, .mission-box h3 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .vision-box h3 i {
+      color: var(--gold);
+      font-size: 2.2rem;
+    }
+
+    .mission-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .mission-list li {
+      padding: 0.8rem 0;
+      padding-left: 2rem;
+      position: relative;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+
+    .mission-list li:last-child {
+      border-bottom: none;
+    }
+
+    .mission-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .quote-box {
+      background: rgba(0, 0, 0, 0.6);
+      border-left: 3px solid var(--gold);
+      padding: 1.8rem;
+      margin: 2.5rem 0;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 10px;
+      font-size: 5rem;
+      color: rgba(212, 175, 55, 0.15);
+      font-family: Georgia, serif;
     }
 
     /* ========== SERVICES ========== */
@@ -510,6 +599,13 @@
     @media (max-width: 992px) {
       h1 { font-size: 2.8rem; }
       h2 { font-size: 2.2rem; }
+      .vision-mission-container {
+        grid-template-columns: 1fr;
+      }
+      .mission-box {
+        border-left: none;
+        border-top: 4px solid var(--gold);
+      }
     }
 
     @media (max-width: 768px) {
@@ -535,12 +631,22 @@
 
       h1 { font-size: 2.3rem; }
       .hero-content p { font-size: 1.1rem; }
+      .vision-box, .mission-box {
+        padding: 1.8rem;
+      }
     }
 
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1.8rem; }
       section { padding: 4rem 5%; }
+      .quote-box {
+        padding: 1.2rem;
+      }
+      .quote-box::before {
+        font-size: 3.5rem;
+        top: -15px;
+      }
     }
   </style>
 </head>
@@ -563,10 +669,10 @@
     <nav>
       <ul id="navMenu">
         <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-page="visi-misi">Visi & Misi</a></li>
         <li><a href="#" class="nav-link" data-page="layanan">Layanan</a></li>
         <li><a href="#" class="nav-link" data-page="portofolio">Portofolio</a></li>
         <li><a href="#" class="nav-link" data-page="testimoni">Testimoni</a></li>
-        <li><a href="#" class="nav-link" data-page="faq">FAQ</a></li>
         <li><a href="#" class="nav-link" data-page="kontak">Kontak</a></li>
       </ul>
     </nav>
@@ -579,8 +685,45 @@
       <div class="container hero-content">
         <h1>Katalog Digital Mewah untuk UMKM Anda</h1>
         <p>Tingkatkan penjualan dengan katalog produk digital yang elegan, interaktif, dan siap dibagikan di WhatsApp, Instagram, dan marketplace.</p>
-        <a href="#" class="btn nav-link" data-page="layanan">Lihat Layanan</a>
+        <a href="#" class="btn nav-link" data-page="visi-misi">Kenali Kami</a>
         <a href="#" class="btn btn-outline nav-link" data-page="kontak">Hubungi Kami</a>
+      </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section id="visi-misi">
+      <div class="container">
+        <h2>Visi & Misi Kami</h2>
+        <p>Mengapa kami hadir untuk UMKM Indonesia — komitmen yang menggerakkan setiap desain yang kami buat.</p>
+        
+        <div class="vision-mission-container">
+          <div class="vision-box">
+            <h3><i class="fas fa-bullseye"></i> Visi Kami</h3>
+            <p>Menjadi mitra digital terdepan yang memberdayakan <strong>10.000 UMKM Indonesia</strong> hingga 2030 melalui katalog digital yang tidak hanya indah, tetapi juga menjadi mesin pertumbuhan bisnis yang nyata.</p>
+            <div class="quote-box">
+              "Kami percaya setiap produk UMKM layak tampil di panggung dunia dengan cara yang elegan dan profesional."
+            </div>
+            <p>Visi kami bukan sekadar membuat katalog — tapi menciptakan <strong>alat pemasaran yang mengubah calon pembeli menjadi pelanggan setia</strong>.</p>
+          </div>
+          
+          <div class="mission-box">
+            <h3><i class="fas fa-rocket"></i> Misi Kami</h3>
+            <ul class="mission-list">
+              <li>Menghadirkan desain katalog yang <strong>mobile-first</strong> — karena 90% pembeli UMKM mengakses via smartphone</li>
+              <li>Menyematkan <strong>strategi pemasaran</strong> dalam setiap desain: QR Code, link belanja langsung, dan CTA yang terbukti meningkatkan konversi</li>
+              <li>Memberikan pendampingan <strong>personal</strong> — bukan sekadar jasa, tapi partner yang memahami bisnis UMKM Anda</li>
+              <li>Menjaga harga <strong>terjangkau</strong> tanpa kompromi pada kualitas premium — karena UMKM adalah tulang punggung ekonomi Indonesia</li>
+              <li>Berkontribusi pada <strong>literasi digital UMKM</strong> melalui edukasi gratis tentang pemanfaatan katalog digital untuk peningkatan penjualan</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+          <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem; color: #ddd;">
+            "Dari warung kopi pinggir jalan hingga brand fashion lokal yang go internasional — kami siap mendukung perjalanan digitalisasi bisnis Anda."
+          </p>
+          <a href="#" class="btn nav-link" data-page="layanan">Lihat Layanan Kami</a>
+        </div>
       </div>
     </section>
 
@@ -677,52 +820,6 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq">
-      <div class="container">
-        <h2>Pertanyaan Umum</h2>
-        <p>Temukan jawaban atas pertanyaan yang sering diajukan oleh UMKM.</p>
-        <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-question">
-              Berapa lama pengerjaannya?
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              Rata-rata 3–5 hari kerja, tergantung kompleksitas dan jumlah produk.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Apakah bisa revisi?
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              Bisa! Kami memberikan revisi tanpa batas hingga Anda puas.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Format apa saja yang didapat?
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              Anda akan mendapatkan file PDF, link flipbook online, dan versi siap unggah ke media sosial.
-            </div>
-          </div>
-          <div class="faq-item">
-            <div class="faq-question">
-              Harga mulai dari berapa?
-              <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-              Paket mulai dari Rp 350.000 untuk 10 produk. Harga bisa disesuaikan dengan kebutuhan.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Kontak Section -->
     <section id="kontak">
       <div class="container">
@@ -806,7 +903,15 @@
       "https://instagram.com/andisyakirah",
       "https://wa.me/6281234567890",
       "https://linkedin.com/company/andisyakirah"
-    ]
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Andi Syakirah"
+    },
+    "foundingDate": "2023",
+    "numberOfEmployees": "1-5",
+    "missionStatement": "Memberdayakan 10.000 UMKM Indonesia melalui katalog digital yang elegan dan berdampak bisnis nyata.",
+    "visionStatement": "Menjadi mitra digital terdepan yang mengangkat produk UMKM Indonesia ke panggung global."
   }
   </script>
 
@@ -829,15 +934,6 @@
       "url": "https://andisyakirah.com"
     }
   }
-  </script>
-
-  <!-- ========== ANALYTICS (Placeholder) ========== -->
-  <script>
-    // Google Analytics (Ganti dengan tracking ID Anda)
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    // gtag('config', 'UA-XXXXXXXXX-X'); // Ganti dengan ID Anda
   </script>
 
   <!-- ========== MAIN JAVASCRIPT ========== -->
@@ -875,22 +971,6 @@
     // ========== MOBILE MENU ==========
     document.getElementById('menuToggle').addEventListener('click', () => {
       document.getElementById('navMenu').classList.toggle('show');
-    });
-
-    // ========== FAQ ACCORDION ==========
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const icon = question.querySelector('i');
-        answer.classList.toggle('show');
-        if (answer.classList.contains('show')) {
-          icon.classList.remove('fa-chevron-down');
-          icon.classList.add('fa-chevron-up');
-        } else {
-          icon.classList.remove('fa-chevron-up');
-          icon.classList.add('fa-chevron-down');
-        }
-      });
     });
 
     // ========== PARTICLE BACKGROUND ==========
@@ -949,16 +1029,6 @@
 
     initParticles();
     animateParticles();
-
-    // Smooth scrolling for anchor links (not used here but good practice)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
   </script>
 
 </body>
