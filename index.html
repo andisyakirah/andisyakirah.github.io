@@ -1,716 +1,820 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Jasa Pembuatan Katalog Produk Digital</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Place favicon.ico in the root directory -->
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andi Syakirah | Jasa Katalog Digital Premium untuk UMKM</title>
+  <meta name="description" content="Jasa pembuatan katalog produk digital premium untuk UMKM oleh Andi Syakirah. Desain elegan, interaktif, dan siap pasarkan di media sosial.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23d4af37%22>A</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yycvVvKqZbYnF+XeGtR6HjyUaI4NpOxQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* ========== RESET & GLOBAL ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- ========================= CSS here ========================= -->
-    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
-    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css" />
-    <link rel="stylesheet" href="assets/css/tiny-slider.css" />
-    <link rel="stylesheet" href="assets/css/animate.css" />
-    <link rel="stylesheet" href="assets/css/lindy-uikit.css" />
-  </head>
-  <body>
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
-        your experience and security.
-      </p>
-    <![endif]-->
+    :root {
+      --gold: #d4af37;
+      --dark: #0a0a0a;
+      --darker: #000;
+      --light: #f5f5f5;
+      --gray: #aaa;
+      --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
 
-    <!-- ========================= preloader start ========================= -->
-    <div class="preloader">
-      <div class="loader">
-        <div class="spinner">
-          <div class="spinner-container">
-            <div class="spinner-rotator">
-              <div class="spinner-left">
-                <div class="spinner-circle"></div>
-              </div>
-              <div class="spinner-right">
-                <div class="spinner-circle"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    body {
+      background-color: var(--darker);
+      color: var(--light);
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ========== PRELOADER ========== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--darker);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 5px solid transparent;
+      border-top: 5px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1.2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ========== CANVAS PARTICLE BACKGROUND ========== */
+    #particlesCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* ========== HEADER & NAVIGATION ========== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--gold), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      position: relative;
+      padding: 0.4rem 0;
+      transition: var(--transition);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: var(--transition);
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: var(--light);
+      cursor: pointer;
+    }
+
+    /* ========== SECTIONS ========== */
+    main {
+      margin-top: 80px;
+    }
+
+    section {
+      display: none;
+      padding: 6rem 5%;
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1, h2, h3, h4 {
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(to right, var(--gold), #fff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--gold);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      color: var(--gold);
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--darker);
+      padding: 0.8rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      border: 2px solid var(--gold);
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--darker);
+    }
+
+    /* ========== HERO SECTION ========== */
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(20, 20, 20, 0.8), var(--darker));
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: rgba(30, 30, 30, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--gold);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    /* ========== PORTFOLIO ========== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .portfolio-item {
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      height: 300px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-overlay h3 {
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      margin-top: 4rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: rgba(30, 30, 30, 0.7);
+      padding: 2rem;
+      border-radius: 15px;
+      border-left: 4px solid var(--gold);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #ddd;
+    }
+
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* ========== FAQ ========== */
+    .faq-item {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1.5rem;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      margin-top: 1rem;
+      color: #ccc;
+      display: none;
+    }
+
+    .faq-answer.show {
+      display: block;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-info {
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-item i {
+      width: 40px;
+      height: 40px;
+      background: rgba(212, 175, 55, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--gold);
+      margin-right: 1rem;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--dark);
+      padding: 3rem 5%;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .social-links {
+      margin: 1.5rem 0;
+    }
+
+    .social-links a {
+      display: inline-block;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin: 0 0.5rem;
+      color: var(--light);
+      line-height: 45px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--gold);
+      color: var(--darker);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 992px) {
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 2.2rem; }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--dark);
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 1.5rem;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      h1 { font-size: 2.3rem; }
+      .hero-content p { font-size: 1.1rem; }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.8rem; }
+      section { padding: 4rem 5%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Particle Background -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Andi Syakirah</div>
+    <div class="menu-toggle" id="menuToggle">
+      <i class="fas fa-bars"></i>
     </div>
-    <!-- ========================= preloader end ========================= -->
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-page="layanan">Layanan</a></li>
+        <li><a href="#" class="nav-link" data-page="portofolio">Portofolio</a></li>
+        <li><a href="#" class="nav-link" data-page="testimoni">Testimoni</a></li>
+        <li><a href="#" class="nav-link" data-page="faq">FAQ</a></li>
+        <li><a href="#" class="nav-link" data-page="kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- ========================= hero-section-wrapper-5 start ========================= -->
-    <section id="home" class="hero-section-wrapper-5">
-      <!-- ========================= header-6 start ========================= -->
-      <header class="header header-6">
-        <div class="navbar-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <nav class="navbar navbar-expand-lg">
-                  <a class="navbar-brand" href="index.html">
-                    <img src="assets/img/logo/logo.svg" alt="Logo" />
-                  </a>
-                  <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent6"
-                    aria-controls="navbarSupportedContent6"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                  </button>
+  <main>
 
-                  <div
-                    class="collapse navbar-collapse sub-menu-bar"
-                    id="navbarSupportedContent6"
-                  >
-                    <ul id="nav6" class="navbar-nav ms-auto">
-                      <li class="nav-item">
-                        <a class="page-scroll active" href="#home">Home</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#feature">About Us</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#about">Portofolio</a>
-                      </li>
+    <!-- Home Section -->
+    <section id="home" class="active">
+      <div class="container hero-content">
+        <h1>Katalog Digital Mewah untuk UMKM Anda</h1>
+        <p>Tingkatkan penjualan dengan katalog produk digital yang elegan, interaktif, dan siap dibagikan di WhatsApp, Instagram, dan marketplace.</p>
+        <a href="#" class="btn nav-link" data-page="layanan">Lihat Layanan</a>
+        <a href="#" class="btn btn-outline nav-link" data-page="kontak">Hubungi Kami</a>
+      </div>
+    </section>
 
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#pricing">Pricing</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="#contact">Contact</a>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div class="header-action d-flex">
-                    <a href="#0"> <i class="lni lni-cart"></i> </a>
-                    <a href="#0"> <i class="lni lni-alarm"></i> </a>
-                  </div>
-                  <!-- navbar collapse -->
-                </nav>
-                <!-- navbar -->
-              </div>
-            </div>
-            <!-- row -->
+    <!-- Layanan Section -->
+    <section id="layanan">
+      <div class="container">
+        <h2>Layanan Premium Kami</h2>
+        <p>Kami menyediakan solusi lengkap untuk kebutuhan katalog digital UMKM Anda:</p>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-book-open"></i>
+            <h3>Katalog Flipbook Interaktif</h3>
+            <p>Desain seperti majalah digital dengan animasi halaman, link belanja, dan QR Code.</p>
           </div>
-          <!-- container -->
+          <div class="service-card">
+            <i class="fas fa-file-pdf"></i>
+            <h3>PDF Profesional</h3>
+            <p>File PDF berkualitas tinggi, siap cetak & digital, dengan branding konsisten.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Optimasi Mobile</h3>
+            <p>Desain responsif yang tampil sempurna di smartphone dan tablet.</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-sync-alt"></i>
+            <h3>Revisi Tanpa Batas</h3>
+            <p>Kami revisi hingga Anda benar-benar puas — tanpa biaya tambahan.</p>
+          </div>
         </div>
-        <!-- navbar area -->
-      </header>
-      <!-- ========================= header-6 end ========================= -->
-
-      <!-- ========================= hero-5 start ========================= -->
-      <div
-        class="hero-section hero-style-5 img-bg"
-        style="background-image: url('assets/img/hero/hero-5/hero-bg.svg')"
-      >
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="hero-content-wrapper">
-                <h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">
-                  Jasa Pembuatan Katalog Produk Digital
-                </h2>
-                <p class="mb-30 wow fadeInUp" data-wow-delay=".4s">
-                  Solusi kreatif desain, video, media sosial, dan website
-                </p>
-                <a
-                  href="#0"
-                  class="button button-lg radius-50 wow fadeInUp"
-                  data-wow-delay=".6s"
-                  >Lihat Portofolio<i class="lni lni-chevron-right"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-6 align-self-end">
-              <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
-                <img src="assets/img/hero/hero-5/hero-img.svg" alt="" />
-              </div>
-            </div>
-          </div>
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="#" class="btn nav-link" data-page="kontak">Mulai Proyek Anda Hari Ini</a>
         </div>
       </div>
-      <!-- ========================= hero-5 end ========================= -->
     </section>
-    <!-- ========================= hero-section-wrapper-6 end ========================= -->
-    <!-- ========================= about style-4 start ========================= -->
-    <section id="about" class="about-section about-style-4">
+
+    <!-- Portofolio Section -->
+    <section id="portofolio">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-5 col-lg-6">
-            <div class="about-content-wrapper">
-              <div class="section-title mb-30">
-                <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">
-                  About Us
-                </h3>
-                <h5>Visi</h5>
-                <p class="wow fadeInUp" data-wow-delay=".3s">
-                  Kami adalah studio kreatif yang membantu UMKM dan brand lokal
-                  membangun identitas digital yang profesional.
-                </p>
-              </div>
-              <h5>Misi</h5>
-              <ul>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle"></i>
-                  Menjadi mitra konten digital terpercaya dan inovatif
-                </li>
-                <li class="wow fadeInUp" data-wow-delay=".4s">
-                  <i class="lni lni-checkmark-circle"></i>
-                  Membuat konten kreatif berkualitas
-                </li>
-                <li class="wow fadeInUp" data-wow-delay=".45s">
-                  <i class="lni lni-checkmark-circle"></i>
-                  Mendukung UMKM go digital
-                </li>
-                <li class="wow fadeInUp" data-wow-delay=".45s">
-                  <i class="lni lni-checkmark-circle"></i>
-                  Mengikuti tren media terbaru
-                </li>
-              </ul>
-              <a
-                href="#0"
-                class="button button-lg radius-10 wow fadeInUp"
-                data-wow-delay=".5s"
-                >Learn More</a
-              >
+        <h2>Portofolio Terbaik Kami</h2>
+        <p>Karya kami untuk UMKM di seluruh Indonesia — dari fashion, kuliner, hingga kerajinan tangan.</p>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600x400/111/d4af37?text=Katalog+Fashion" alt="Katalog Fashion">
+            <div class="portfolio-overlay">
+              <h3>Fashion Lokal</h3>
+              <p>Flipbook + Link Shopee</p>
             </div>
           </div>
-          <div class="col-xl-7 col-lg-6">
-            <div
-              class="about-image text-lg-right wow fadeInUp"
-              data-wow-delay=".5s"
-            >
-              <img src="assets/img/about/about-4/about-img.svg" alt="" />
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600x400/111/d4af37?text=Kuliner+Premium" alt="Kuliner Premium">
+            <div class="portfolio-overlay">
+              <h3>Kuliner Premium</h3>
+              <p>PDF + QR Order via WA</p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600x400/111/d4af37?text=Kerajinan+Tangan" alt="Kerajinan Tangan">
+            <div class="portfolio-overlay">
+              <h3>Kerajinan Tangan</h3>
+              <p>Web Katalog Mini</p>
+            </div>
+          </div>
+          <div class="portfolio-item">
+            <img src="https://via.placeholder.com/600x400/111/d4af37?text=Produk+Kecantikan" alt="Produk Kecantikan">
+            <div class="portfolio-overlay">
+              <h3>Produk Kecantikan</h3>
+              <p>Instagram Catalog + Linktree</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ========================= about style-4 end ========================= -->
 
-    <!-- ========================= feature style-5 start ========================= -->
-    <section id="feature" class="feature-section feature-style-5">
+    <!-- Testimoni Section -->
+    <section id="testimoni">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
-            <div class="section-title text-center mb-60">
-              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">
-                Portofolio
-              </h3>
-              <p class="wow fadeInUp" data-wow-delay=".4s">
-                Kami membantu Anda mengelola dan mengembangkan website secara
-                efektif agar tampil profesional, informatif, dan memberikan
-                hasil yang nyata bagi bisnis atau usaha Anda.
-              </p>
-            </div>
+        <h2>Apa Kata Klien Kami?</h2>
+        <p>UMKM yang telah sukses meningkatkan penjualan dengan katalog digital dari Andi Syakirah.</p>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Sejak pakai katalog digital dari Mbak Andi, orderan lewat WhatsApp naik 2x lipat! Desainnya mewah banget, client langsung percaya."</p>
+            <p class="testimonial-author">— Rina, Owner Batik Nusantara</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Proses cepat, komunikasi lancar, dan hasilnya luar biasa. Revisi dikasih sampai puas. Highly recommended!"</p>
+            <p class="testimonial-author">— Dika, Founder SnackBox.id</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"Katalognya bisa langsung dikirim ke calon buyer via WA. Gak perlu repot foto-foto lagi. Sangat membantu UMKM seperti saya."</p>
+            <p class="testimonial-author">— Sari, Pengrajin Perak Bali</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-              <div class="icon">
-                <i class="lni lni-vector"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Konten Instagram</h5>
-                <p>
-                  Pembuatan konten Instagram yang menarik dan konsisten untuk
-                  meningkatkan interaksi, memperkuat branding, dan menjangkau
-                  lebih banyak audiens.
-                </p>
-              </div>
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="container">
+        <h2>Pertanyaan Umum</h2>
+        <p>Temukan jawaban atas pertanyaan yang sering diajukan oleh UMKM.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              Berapa lama pengerjaannya?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Rata-rata 3–5 hari kerja, tergantung kompleksitas dan jumlah produk.
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-              <div class="icon">
-                <i class="lni lni-pallet"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Website Landing Page</h5>
-                <p>
-                  Perancangan landing page profesional yang responsif,
-                  informatif, dan mudah diakses untuk mendukung promosi produk
-                  atau jasa.
-                </p>
-              </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Apakah bisa revisi?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Bisa! Kami memberikan revisi tanpa batas hingga Anda puas.
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-              <div class="icon">
-                <i class="lni lni-stats-up"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Video Promosi</h5>
-                <p>
-                  Produksi video promosi kreatif untuk memperkenalkan produk
-                  atau brand secara visual agar lebih menarik dan mudah diingat.
-                </p>
-              </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Format apa saja yang didapat?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Anda akan mendapatkan file PDF, link flipbook online, dan versi siap unggah ke media sosial.
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-              <div class="icon">
-                <i class="lni lni-code-alt"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Web Development</h5>
-                <p>
-                 <p>
-  Pengembangan website fungsional dan responsif yang disesuaikan
-  dengan kebutuhan bisnis serta mudah dikelola.
-</p>
-
-                </p>
-              </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Harga mulai dari berapa?
+              <i class="fas fa-chevron-down"></i>
             </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-              <div class="icon">
-                <i class="lni lni-lock"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Best Security</h5>
-                <p>
-                   Penerapan sistem keamanan dasar pada website untuk melindungi data,
-  mencegah akses tidak sah, dan menjaga kestabilan sistem.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-              <div class="icon">
-                <i class="lni lni-code"></i>
-                <svg
-                  width="110"
-                  height="72"
-                  viewBox="0 0 110 72"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z"
-                    fill="#EBF4FF"
-                  />
-                </svg>
-              </div>
-              <div class="content">
-                <h5>Web Design</h5>
-                <p>
-                  Perancangan tampilan website yang menarik, rapi, dan mudah digunakan
-  agar pengunjung nyaman saat mengakses informasi.
-                </p>
-              </div>
+            <div class="faq-answer">
+              Paket mulai dari Rp 350.000 untuk 10 produk. Harga bisa disesuaikan dengan kebutuhan.
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- ========================= feature style-5 end ========================= -->
 
-    <section id="pricing" class="pricing-section pricing-style-4 bg-light">
+    <!-- Kontak Section -->
+    <section id="kontak">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-5 col-lg-6">
-            <div class="section-title mb-60">
-              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">
-                Pricing Plan
-              </h3>
-              <p class="wow fadeInUp" data-wow-delay=".4s">
-                Kami menyediakan berbagai paket layanan konten digital dan website
-  yang dirancang untuk membantu bisnis tampil profesional dan
-  meningkatkan kehadiran di dunia digital.
-              </p>
-            </div>
+        <h2>Siap Meningkatkan Penjualan UMKM Anda?</h2>
+        <p>Hubungi Kami sekarang untuk konsultasi GRATIS!</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>andi.syakirah@example.com</span>
           </div>
-          <div class="col-xl-7 col-lg-6">
-            <div
-              class="pricing-active-wrapper wow fadeInUp"
-              data-wow-delay=".4s"
-            >
-              <div class="pricing-active">
-                <div class="single-pricing-wrapper">
-                  <div class="single-pricing">
-                    <h6>Starter</h6>
-                    <h4>konten feed</h4>
-                    <h3>Rp 750.000</h3>
-                    <ul>
-                      <li>konten feed desain menarik</li>
-                      <li>Caption disesuaikan dengan target audiens</li>
-                      <li>Desain katalog produk digital</li>
-                      <li>1 kali revisi per konten</li>
-                    </ul>
-                    <a href="#0" class="button radius-30">Pilih Paket</a>
-                  </div>
-                </div>
-                <div class="single-pricing-wrapper">
-                  <div class="single-pricing">
-                    <h6>Premium</h6>
-                    <h4>Konten lengkap</h4>
-                    <h3>Rp 5.000.000</h3>
-                    <ul>
-                      <li>24 konten feed + story</li>
-                      <li>8 video promosi pendek/li>
-                      <li>Strategi konten dan branding</li>
-                      <li>Revisi sesuai kebutuhan</li>
-                    </ul>
-                    <a href="#0" class="button radius-30">Pilih Paket</a>
-                  </div>
-                </div>
-                <div class="single-pricing-wrapper">
-                  <div class="single-pricing">
-                    <h6>Pro</h6>
-                    <h4>Website + konten</h4>
-                    <h3>Rp 2.500.000/h3>
-                    <ul>
-                      <li>Landing page responsif</li>
-                      <li>12 konten media sosial</li>
-                      <li>Optimasi SEO dasar</li>
-                      <li>Layout rapi dan mudah dipahami</li>
-                    </ul>
-                    <a href="#0" class="button radius-30">Pilih Paket</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <span>+62 812-3456-7890</span>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Jakarta, Indonesia</span>
           </div>
         </div>
+        <p style="margin-top: 2rem; font-size: 1.1rem;">
+          Kirim pesan sekarang — respons dalam 1x24 jam!
+        </p>
+        <a href="mailto:andi.syakirah@example.com" class="btn">Kirim Email Sekarang</a>
       </div>
     </section>
-    <!-- ========================= pricing style-4 end ========================= -->
 
-    <!-- ========================= contact-style-3 start ========================= -->
-    <section id="contact" class="contact-section contact-style-3">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
-            <div class="section-title text-center mb-50">
-              <h3 class="mb-15">Kontak Kami</h3>
-              <p>
-                Kami membantu Anda merancang dan mengelola website secara efektif
-  agar tampil profesional serta memberikan hasil yang optimal.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="contact-form-wrapper">
-              <form action="" method="">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="single-input">
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="form-input"
-                        placeholder="Name"
-                      />
-                      <i class="lni lni-user"></i>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-input">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="form-input"
-                        placeholder="Email"
-                      />
-                      <i class="lni lni-envelope"></i>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-input">
-                      <input
-                        type="text"
-                        id="number"
-                        name="number"
-                        class="form-input"
-                        placeholder="Number"
-                      />
-                      <i class="lni lni-phone"></i>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="single-input">
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        class="form-input"
-                        placeholder="Subject"
-                      />
-                      <i class="lni lni-text-format"></i>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="single-input">
-                      <textarea
-                        name="message"
-                        id="message"
-                        class="form-input"
-                        placeholder="Message"
-                        rows="6"
-                      ></textarea>
-                      <i class="lni lni-comments-alt"></i>
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-button">
-                      <button type="submit" class="button">
-                        <i class="lni lni-telegram-original"></i> Submit
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
+  </main>
 
-          <div class="col-lg-4">
-            <div class="left-wrapper">
-              <div class="row">
-                <div class="col-lg-12 col-md-6">
-                  <div class="single-item">
-                    <div class="icon">
-                      <i class="lni lni-phone"></i>
-                    </div>
-                    <div class="text">
-                      <p>0045939863784</p>
-                      <p>+004389478327</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12 col-md-6">
-                  <div class="single-item">
-                    <div class="icon">
-                      <i class="lni lni-envelope"></i>
-                    </div>
-                    <div class="text">
-                      <p>andisyakirah@gmail.com</p>
-                      <p>UMKM@yourwebsite.com</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-12 col-md-6">
-                  <div class="single-item">
-                    <div class="icon">
-                      <i class="lni lni-map-marker"></i>
-                    </div>
-                    <div class="text">
-                      <p>
-                        jl.jalanin aja dlu
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <footer>
+    <div class="container">
+      <div class="logo" style="font-size: 1.5rem; margin-bottom: 1rem;">Andi Syakirah</div>
+      <p>Jasa Pembuatan Katalog Digital Premium untuk UMKM</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
       </div>
-    </section>
-    <!-- ========================= contact-style-3 end ========================= -->
+      <p class="copyright">&copy; 2026 Andi Syakirah Digital Studio. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <!-- ========================= clients-logo start ========================= -->
-    <section class="clients-logo-section pt-100 pb-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="client-logo wow fadeInUp" data-wow-delay=".2s">
-              <img src="assets/img/clients/brands.svg" alt="" class="w-100" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- ========================= clients-logo end ========================= -->
+  <script>
+    // ========== PRELOADER ==========
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.opacity = '0';
+        document.getElementById('preloader').style.visibility = 'hidden';
+      }, 1200);
+    });
 
-    <!-- ========================= footer style-4 start ========================= -->
-    <footer class="footer footer-style-4">
-      <div class="container">
-        <div class="widget-wrapper">
-          <div class="row">
-            <div class="col-xl-3 col-lg-4 col-md-6">
-              <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
-                <div class="logo">
-                  <a href="#0">
-                    <img src="assets/img/logo/logo.svg" alt="" />
-                  </a>
-                </div>
-                <p class="desc">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Facilisis nulla placerat amet amet congue.
-                </p>
-                <ul class="socials">
-                  <li>
-                    <a href="#0"> <i class="lni lni-facebook-filled"></i> </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-twitter-filled"></i> </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-instagram-filled"></i> </a>
-                  </li>
-                  <li>
-                    <a href="#0"> <i class="lni lni-linkedin-original"></i> </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
-              <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
-                <h6>Quick Link</h6>
-                <ul class="links">
-                  <li><a href="#0">Home</a></li>
-                  <li><a href="#0">About</a></li>
-                  <li><a href="#0">Service</a></li>
-                  <li><a href="#0">Testimonial</a></li>
-                  <li><a href="#0">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-              <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
-                <h6>Services</h6>
-                <ul class="links">
-                  <li><a href="#0">Web Design</a></li>
-                  <li><a href="#0">Web Development</a></li>
-                  <li><a href="#0">Seo Optimization</a></li>
-                  <li><a href="#0">Blog Writing</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xl-3 col-lg-3 col-md-6">
-              <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
-                <h6>Download App</h6>
-                <ul class="download-app">
-                  <li>
-                    <a href="#0">
-                      <span class="icon"><i class="lni lni-apple"></i></span>
-                      <span class="text"
-                        >Download on the <b>App Store</b>
-                      </span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#0">
-                      <span class="icon"
-                        ><i class="lni lni-play-store"></i
-                      ></span>
-                      <span class="text">GET IT ON <b>Play Store</b> </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
-          <p>
-            Design and Developed by
-            <a href="https://uideck.com" rel="nofollow" target="_blank"
-              >UIdeck</a
-            >
-            Built-with
-            <a href="https://uideck.com" rel="nofollow" target="_blank"
-              >Lindy UI Kit</a
-            >. Distributed by
-            <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- ========================= footer style-4 end ========================= -->
+    // ========== NAVIGATION ==========
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = this.getAttribute('data-page');
 
-    <!-- ========================= scroll-top start ========================= -->
-    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
-    <!-- ========================= scroll-top end ========================= -->
+        // Remove active from all
+        document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+        document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
 
-    <!-- ========================= JS here ========================= -->
-    <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
-    <script src="assets/js/tiny-slider.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+        // Add active to current
+        document.getElementById(target).classList.add('active');
+        this.classList.add('active');
+
+        // Close mobile menu
+        document.getElementById('navMenu').classList.remove('show');
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // ========== MOBILE MENU ==========
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('show');
+    });
+
+    // ========== FAQ ACCORDION ==========
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        const icon = question.querySelector('i');
+        answer.classList.toggle('show');
+        if (answer.classList.contains('show')) {
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-up');
+        } else {
+          icon.classList.remove('fa-chevron-up');
+          icon.classList.add('fa-chevron-down');
+        }
+      });
+    });
+
+    // ========== PARTICLE BACKGROUND ==========
+    const canvas = document.getElementById('particlesCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    const particlesArray = [];
+    const numberOfParticles = 80;
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = Math.random() * 1 - 0.5;
+        this.speedY = Math.random() * 1 - 0.5;
+        this.color = 'rgba(212, 175, 55, 0.3)';
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+      }
+
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+    // Smooth scrolling for anchor links (not used here but good practice)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
 </html>
